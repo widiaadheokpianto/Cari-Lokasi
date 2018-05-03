@@ -25,4 +25,22 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="57dp"
         android:text="HOSPITAL" />
+
+    <Button
+        android:id="@+id/btnlaundry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnmasjid"
+        android:layout_below="@+id/btnmasjid"
+        android:layout_marginTop="55dp"
+        android:text="LAUNDRY" />
+
+    <Button
+        android:id="@+id/btncafe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnlaundry"
+        android:layout_alignBottom="@+id/btnlaundry"
+        android:layout_alignStart="@+id/btnhospital"
+        android:text="CAFE" />
 </RelativeLayout>
