@@ -1,4 +1,5 @@
-package com.adhestudio.carilokasi.MapsMasjid;
+package com.adhestudio.carilokasi.Hospital;
+
 
 import android.Manifest;
 import android.app.Dialog;
@@ -15,6 +16,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.adhestudio.carilokasi.MapsMasjid.ParserJSONPlace;
 import com.adhestudio.carilokasi.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -36,7 +38,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
-public class MapsMasjidActivity extends FragmentActivity implements LocationListener
+public class HospitalMaps extends FragmentActivity implements LocationListener
 {
     private String API_KEY_SERVER = "AIzaSyCERTF3KvDA3vahJOhOvbKjuTOGKHg41JY";
     private GoogleMap mGoogleMap;
@@ -80,7 +82,7 @@ public class MapsMasjidActivity extends FragmentActivity implements LocationList
                     StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json");
                     sb.append("?location=" + mLatitude + "," + mLongitude);
                     sb.append("&radius=5000");
-                    sb.append("&types=mosque");
+                    sb.append("&types=hospital");
                     sb.append("&sensor=true");
                     sb.append("&key=" + API_KEY_SERVER);
 
@@ -92,26 +94,26 @@ public class MapsMasjidActivity extends FragmentActivity implements LocationList
 
     private void initMap()
     {
-        if (mGoogleMap != null)
-        {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
+            if (mGoogleMap != null)
             {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
+                {
+
+                }
+                mGoogleMap.setMyLocationEnabled(true);
+
+                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+                Criteria criteria = new Criteria();
+                String provider = locationManager.getBestProvider(criteria, true);
+                Location location = locationManager.getLastKnownLocation(provider);
+
+                if (location != null)
+                {
+                    onLocationChanged(location);
+                }
+                locationManager.requestLocationUpdates(provider, 20000, 0, this);
 
             }
-            mGoogleMap.setMyLocationEnabled(true);
-
-            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-            Criteria criteria = new Criteria();
-            String provider = locationManager.getBestProvider(criteria, true);
-            Location location = locationManager.getLastKnownLocation(provider);
-
-            if (location != null)
-            {
-                onLocationChanged(location);
-            }
-            locationManager.requestLocationUpdates(provider, 20000, 0, this);
-
-        }
     }
 
     //download json data from url
@@ -170,7 +172,6 @@ public class MapsMasjidActivity extends FragmentActivity implements LocationList
 
     }
 
-    //download Google Places
     private class PlacesTask extends AsyncTask<String, Integer, String>
     {
 
@@ -179,7 +180,7 @@ public class MapsMasjidActivity extends FragmentActivity implements LocationList
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = new ProgressDialog(MapsMasjidActivity.this);
+            progressDialog = new ProgressDialog(HospitalMaps.this);
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(true);
             progressDialog.setMessage("Loading Peta");
@@ -255,5 +256,4 @@ public class MapsMasjidActivity extends FragmentActivity implements LocationList
             }
         }
     }
-
 }

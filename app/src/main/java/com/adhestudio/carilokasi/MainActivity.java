@@ -6,11 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.adhestudio.carilokasi.Hospital.HospitalMaps;
 import com.adhestudio.carilokasi.MapsMasjid.MapsMasjidActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mButtonMasjid;
+    Button mButtonMasjid, mButtonHospital;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
             {
                  Intent intent = new Intent(MainActivity.this, MapsMasjidActivity.class);
                  startActivity(intent);
+            }
+        });
+
+        mButtonHospital = findViewById(R.id.btnhospital);
+        mButtonHospital.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, HospitalMaps.class);
+                startActivity(intent);
             }
         });
     }

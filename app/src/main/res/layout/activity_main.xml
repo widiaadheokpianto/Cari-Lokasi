@@ -11,8 +11,18 @@
         android:id="@+id/btnmasjid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="153dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="57dp"
         android:text="Masjid" />
+
+    <Button
+        android:id="@+id/btnhospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnmasjid"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="57dp"
+        android:text="HOSPITAL" />
 </RelativeLayout>
