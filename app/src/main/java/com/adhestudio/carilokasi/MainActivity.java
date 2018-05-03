@@ -9,13 +9,15 @@ import android.widget.Button;
 import com.adhestudio.carilokasi.Atm.AtmMaps;
 import com.adhestudio.carilokasi.Bank.BankMaps;
 import com.adhestudio.carilokasi.Cafe.CafeMaps;
+import com.adhestudio.carilokasi.CarWash.CarWashMaps;
 import com.adhestudio.carilokasi.Hospital.HospitalMaps;
 import com.adhestudio.carilokasi.Laundry.LaundryMaps;
 import com.adhestudio.carilokasi.MapsMasjid.MapsMasjidActivity;
+import com.adhestudio.carilokasi.Parking.ParkingMaps;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe, mButtonAtm, mButtonBank;
+    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe, mButtonAtm, mButtonBank, mButtonParking, mButtonCarwash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, BankMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonParking = findViewById(R.id.btnparking);
+        mButtonParking.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, ParkingMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonCarwash = findViewById(R.id.btncarwash);
+        mButtonCarwash.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, CarWashMaps.class);
                 startActivity(intent);
             }
         });

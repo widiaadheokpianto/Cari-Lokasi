@@ -60,4 +60,22 @@
         android:layout_alignBottom="@+id/btnatm"
         android:layout_alignEnd="@+id/btnhospital"
         android:text="BANK" />
+
+    <Button
+        android:id="@+id/btnparking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnatm"
+        android:layout_below="@+id/btnatm"
+        android:layout_marginTop="41dp"
+        android:text="PARKING" />
+
+    <Button
+        android:id="@+id/btncarwash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnparking"
+        android:layout_alignBottom="@+id/btnparking"
+        android:layout_alignStart="@+id/btnbank"
+        android:text="CARWASH" />
 </RelativeLayout>

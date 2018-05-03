@@ -31,7 +31,9 @@
         <activity android:name=".Laundry.LaundryMaps" />
         <activity android:name=".Cafe.CafeMaps" />
         <activity android:name=".Atm.AtmMaps" />
-        <activity android:name=".Bank.BankMaps"></activity>
+        <activity android:name=".Bank.BankMaps" />
+        <activity android:name=".Parking.ParkingMaps" />
+        <activity android:name=".CarWash.CarWashMaps"></activity>
     </application>
 
 </manifest>
