@@ -43,4 +43,21 @@
         android:layout_alignBottom="@+id/btnlaundry"
         android:layout_alignStart="@+id/btnhospital"
         android:text="CAFE" />
+
+    <Button
+        android:id="@+id/btnatm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnlaundry"
+        android:layout_below="@+id/btnlaundry"
+        android:layout_marginTop="46dp"
+        android:text="ATM" />
+
+    <Button
+        android:id="@+id/btnbank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnatm"
+        android:layout_alignEnd="@+id/btnhospital"
+        android:text="BANK" />
 </RelativeLayout>

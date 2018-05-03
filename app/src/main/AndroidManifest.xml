@@ -29,7 +29,9 @@
 
         <activity android:name=".Hospital.HospitalMaps" />
         <activity android:name=".Laundry.LaundryMaps" />
-        <activity android:name=".Cafe.CafeMaps"></activity>
+        <activity android:name=".Cafe.CafeMaps" />
+        <activity android:name=".Atm.AtmMaps" />
+        <activity android:name=".Bank.BankMaps"></activity>
     </application>
 
 </manifest>

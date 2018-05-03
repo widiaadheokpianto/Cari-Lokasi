@@ -1,4 +1,4 @@
-package com.adhestudio.carilokasi.Laundry;
+package com.adhestudio.carilokasi.Bank;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -37,7 +37,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
-public class LaundryMaps extends FragmentActivity implements LocationListener
+public class BankMaps extends FragmentActivity implements LocationListener
 {
     private String API_KEY_SERVER = "AIzaSyCERTF3KvDA3vahJOhOvbKjuTOGKHg41JY";
     private GoogleMap mGoogleMap;
@@ -81,7 +81,7 @@ public class LaundryMaps extends FragmentActivity implements LocationListener
                     StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json");
                     sb.append("?location=" + mLatitude + "," + mLongitude);
                     sb.append("&radius=5000");
-                    sb.append("&types=laundry");
+                    sb.append("&types=bank");
                     sb.append("&sensor=true");
                     sb.append("&key=" + API_KEY_SERVER);
 
@@ -179,7 +179,7 @@ public class LaundryMaps extends FragmentActivity implements LocationListener
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = new ProgressDialog(LaundryMaps.this);
+            progressDialog = new ProgressDialog(BankMaps.this);
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(true);
             progressDialog.setMessage("Loading Peta");
@@ -255,5 +255,4 @@ public class LaundryMaps extends FragmentActivity implements LocationListener
             }
         }
     }
-
 }

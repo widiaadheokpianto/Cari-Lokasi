@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.adhestudio.carilokasi.Atm.AtmMaps;
+import com.adhestudio.carilokasi.Bank.BankMaps;
 import com.adhestudio.carilokasi.Cafe.CafeMaps;
 import com.adhestudio.carilokasi.Hospital.HospitalMaps;
 import com.adhestudio.carilokasi.Laundry.LaundryMaps;
@@ -13,7 +15,7 @@ import com.adhestudio.carilokasi.MapsMasjid.MapsMasjidActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe;
+    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe, mButtonAtm, mButtonBank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, CafeMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonAtm = findViewById(R.id.btnatm);
+        mButtonAtm.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, AtmMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonBank = findViewById(R.id.btnbank);
+        mButtonBank.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, BankMaps.class);
                 startActivity(intent);
             }
         });
