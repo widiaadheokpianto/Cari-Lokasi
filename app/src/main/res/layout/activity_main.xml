@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnmasjid"
         android:layout_below="@+id/btnmasjid"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="29dp"
         android:text="LAUNDRY" />
 
     <Button
@@ -78,4 +78,37 @@
         android:layout_alignBottom="@+id/btnparking"
         android:layout_alignStart="@+id/btnbank"
         android:text="CARWASH" />
+
+    <Button
+        android:id="@+id/btnpark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnparking"
+        android:layout_below="@+id/btnparking"
+        android:layout_marginTop="33dp"
+        android:text="PARK" />
+
+    <Button
+        android:id="@+id/btnmuseum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btncarwash"
+        android:layout_alignTop="@+id/btnpark"
+        android:text="MUSEUM" />
+
+    <Button
+        android:id="@+id/btnairport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnpark"
+        android:layout_alignParentBottom="true"
+        android:text="AIRPORT" />
+
+    <Button
+        android:id="@+id/btnshoping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnmuseum"
+        android:text="MALL" />
 </RelativeLayout>

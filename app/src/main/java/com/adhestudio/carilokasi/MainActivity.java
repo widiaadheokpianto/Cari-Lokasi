@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.adhestudio.carilokasi.Airport.AirportMaps;
 import com.adhestudio.carilokasi.Atm.AtmMaps;
 import com.adhestudio.carilokasi.Bank.BankMaps;
 import com.adhestudio.carilokasi.Cafe.CafeMaps;
@@ -13,11 +14,15 @@ import com.adhestudio.carilokasi.CarWash.CarWashMaps;
 import com.adhestudio.carilokasi.Hospital.HospitalMaps;
 import com.adhestudio.carilokasi.Laundry.LaundryMaps;
 import com.adhestudio.carilokasi.MapsMasjid.MapsMasjidActivity;
+import com.adhestudio.carilokasi.Museum.MuseumMaps;
+import com.adhestudio.carilokasi.Park.ParkMaps;
 import com.adhestudio.carilokasi.Parking.ParkingMaps;
+import com.adhestudio.carilokasi.ShopingMall.ShopingMaps;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe, mButtonAtm, mButtonBank, mButtonParking, mButtonCarwash;
+    Button mButtonMasjid, mButtonHospital, mButtonLaundry, mButtonCafe, mButtonAtm, mButtonBank, mButtonParking, mButtonCarwash, mButtonPark, mButtonMusemum, mButtonAirport,
+            mButtonShoping;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +113,50 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, CarWashMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonPark = findViewById(R.id.btnpark);
+        mButtonPark.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, ParkMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonMusemum = findViewById(R.id.btnmuseum);
+        mButtonMusemum.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, MuseumMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonAirport = findViewById(R.id.btnairport);
+        mButtonAirport.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, AirportMaps.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonShoping = findViewById(R.id.btnshoping);
+        mButtonShoping.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, ShopingMaps.class);
                 startActivity(intent);
             }
         });
